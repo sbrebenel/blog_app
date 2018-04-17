@@ -1,0 +1,19 @@
+ALTER TABLE telephony AUTO_INCREMENT = 1
+
+SET @count = 0; UPDATE `telephony` SET `telephony`.`id` = @count:= @count + 1;
+
+$.ajax({
+    url: "send_data_download",
+    dataType: "text",
+    type: "post",
+    data: {out_hostname: selected_out_hostname, 
+    out_username:selected_out_username, 
+    out_password:selected_out_password, 
+    out_path:selected_out_path},
+    success: function( data, textStatus, jQxhr ){
+        console.log("Downloading ...");
+    }, 
+    error: function( jqXhr, textStatus, errorThrown ){
+        console.log( errorThrown );
+    } 
+}); 
